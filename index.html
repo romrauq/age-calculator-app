@@ -4,51 +4,38 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
+    <link rel="stylesheet" href="./resources/css/styles.css">
     <title>Frontend Mentor | Age calculator app</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
 
   <body>
 
-    <div>
-      <div>
-        <div class="input-container">
+    <div class="component-body">
+      <div class="inputs-container">
+        <div class="input-div">
           <label for="day">Day</label>
-          <input type="number" name="day" id="day-input" class="input-fields">
+          <input type="number" name="day" id="day-input" class="input-field">
         </div>
-        <div>
+        <div class="input-div">
           <label for="month">Month</label>
-          <input type="number" name="month" id="month-input" class="input-fields">
+          <input type="number" name="month" id="month-input" class="input-field">
         </div>
-        <div>
+        <div class="input-div">
           <label for="year">Year</label>
-          <input type="number" name="year" id="year-input" class="input-fields">
+          <input type="number" name="year" id="year-input" class="input-field">
+        </div>
+      </div>
+
+      <div class="outputs-container">
+        <div>
+          <span id="days-output"></span><span>years</span>
         </div>
         <div>
-          <div>
-            <span id="days-output"></span><span>years</span>
-          </div>
-          <div>
-            <span id="months-output"></span><span>months</span>
-          </div>
-          <div>
-            <span id="years-output"></span><span>days</span>
-          </div>
+          <span id="months-output"></span><span>months</span>
+        </div>
+        <div>
+          <span id="years-output"></span><span>days</span>
         </div>
       </div>
     </div>

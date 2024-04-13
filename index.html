@@ -15,27 +15,34 @@
       <div class="inputs-container">
         <div class="input-div">
           <label for="day" class="input-label">DAY</label>
-          <input type="number" name="day" id="day-input" class="input-field">
+          <input type="number" name="day" id="day-input" class="input-field" placeholder="DD">
+          <small class="alert-text" id="day-alert">must be a valid day</small>
         </div>
+
         <div class="input-div">
           <label for="month" class="input-label">MONTH</label>
-          <input type="number" name="month" id="month-input" class="input-field">
+          <input type="number" name="month" id="month-input" class="input-field" placeholder="MM">
+          <small class="alert-text" id="month-alert">must be a valid month</small>
         </div>
+
         <div class="input-div">
           <label for="year" class="input-label">YEAR</label>
-          <input type="number" name="year" id="year-input" class="input-field">
+          <input type="number" name="year" id="year-input" class="input-field" placeholder="YYYY">
+          <small class="alert-text" id="year-alert">Must be in the past</small>
         </div>
       </div>
 
+      <!-- <img class="arrow-icon" src="./resources/images/icon-arrow.svg" alt="" srcset=""> -->
+
       <div class="outputs-container">
         <div>
-          <span id="days-output">--</span><span>years</span>
+          <span class="output-text" id="years-output">--</span><span> years</span>
         </div>
         <div>
-          <span id="months-output">--</span><span>months</span>
+          <span class="output-text" id="months-output">--</span><span> months</span>
         </div>
         <div>
-          <span id="years-output">--</span><span>days</span>
+          <span class="output-text" id="days-output">--</span><span> days</span>
         </div>
       </div>
     </div>

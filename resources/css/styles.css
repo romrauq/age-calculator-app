@@ -33,6 +33,12 @@ body {
 	background-color: hsl(0, 0%, 94%);
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
 .component-body {
 	top: 25%;
 	transform: translateY(25%);
@@ -45,7 +51,7 @@ body {
 
 .inputs-container {
 	display: flex;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 	/* background-color: blue; */
 }
 
@@ -75,15 +81,11 @@ body {
 }
 
 .alert-text {
+	visibility: hidden;
 	color: hsl(0, 100%, 67%);
 	font-family: Poppins-italic;
 	font-size: 10px;
-}
-
-.arrow-icon {
-	/* color: blue; */
-	/* background-color: blue; */
-	/* fill: blue; */
+	margin-top: 3px;
 }
 
 .outputs-container {

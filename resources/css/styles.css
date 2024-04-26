@@ -81,6 +81,10 @@ input[type="number"]::-webkit-outer-spin-button {
 	cursor: pointer;
 }
 
+.input-field:focus {
+	outline: 1px solid hsl(259, 100%, 65%);
+}
+
 .alert-text {
 	visibility: hidden;
 	color: hsl(0, 100%, 67%);

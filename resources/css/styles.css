@@ -51,7 +51,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .inputs-container {
 	display: flex;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid hsl(0, 0%, 86%);
 }
 
 .input-div {
@@ -88,12 +89,34 @@ input[type="number"]::-webkit-outer-spin-button {
 	margin-top: 3px;
 }
 
+.action-button {
+	position: absolute;
+	right: 25px;
+	transform: translateY(-25px);
+	padding: 10px;
+	background-color: hsl(0, 0%, 8%);
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+}
+
+.action-button:hover {
+	background-color: hsl(259, 100%, 65%);
+}
+
+/* .action-button:active {
+	background-color: hsl(259, 100%, 65%);
+} */
+
+.arrow-icon {
+	width: 25px;
+}
+
 .outputs-container {
 	font-size: 40px;
 	font-family: Poppins-extra-bold-italic;
 	font-weight: 900;
 	padding-top: 20px;
-	border-top: 1px solid hsl(0, 0%, 86%);
 }
 
 .output-text {

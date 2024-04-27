@@ -10,10 +10,10 @@ const monthAlert = document.getElementById("month-alert");
 const yearAlert = document.getElementById("year-alert");
 const button = document.getElementById("action-btn");
 
-// Event listener for input fields:
-dayInput.addEventListener("input", validateInputs);
-monthInput.addEventListener("input", validateInputs);
-yearInput.addEventListener("input", validateInputs);
+// Event listeners for input fields:
+dayInput.addEventListener("input", validateDay);
+monthInput.addEventListener("input", validateMonth);
+yearInput.addEventListener("input", validateYear);
 
 // Function to calculate age:
 function calculateAge() {
@@ -37,14 +37,15 @@ function calculateAge() {
 	yearsOutput.textContent = years;
 	monthsOutput.textContent = months;
 	daysOutput.textContent = days;
+
+	console.log(birthDate);
+	console.log(days, months, years);
+	console.log(typeof dayInput.value); // Returns string when empty. Use to set condition.
 }
 
-// Function to validate inputs and update alerts
-function validateInputs() {
-	const today = new Date();
+// Function to validate day input and update alert:
+function validateDay() {
 	const day = parseInt(dayInput.value);
-	const month = parseInt(monthInput.value);
-	const year = parseInt(yearInput.value);
 
 	if (day <= 0 || day > 31) {
 		dayAlert.textContent = "Must be a valid day";
@@ -55,8 +56,13 @@ function validateInputs() {
 	} else {
 		dayAlert.style.visibility = "hidden";
 	}
+}
 
-	if (month < 0 || month > 12) {
+// Function to validate month input and update alert:
+function validateMonth() {
+	const month = parseInt(monthInput.value);
+
+	if (month <= 0 || month > 12) {
 		monthAlert.textContent = "Must be a valid month";
 		monthAlert.style.visibility = "visible";
 	} else if (isNaN(month)) {
@@ -65,19 +71,23 @@ function validateInputs() {
 	} else {
 		monthAlert.style.visibility = "hidden";
 	}
+}
+
+// Function to validate year input and update alert:
+function validateYear() {
+	const today = new Date();
+	const year = parseInt(yearInput.value);
 
 	if (year > today.getFullYear()) {
 		yearAlert.textContent = "Must be in the past";
 		yearAlert.style.visibility = "visible";
 	} else if (isNaN(year)) {
-		yearAlert.textContent = "Please provide year value.";
+		yearAlert.textContent = "Must be a valid year.";
+		yearAlert.style.visibility = "visible";
+	} else if (year <= 0) {
+		yearAlert.textContent = "Must be greater than 0";
 		yearAlert.style.visibility = "visible";
 	} else {
 		yearAlert.style.visibility = "hidden";
-	}
-
-	// Recalculate age if all inputs are valid
-	if (day <= 31 && month <= 12 && year <= today.getFullYear()) {
-		calculateAge();
 	}
 }

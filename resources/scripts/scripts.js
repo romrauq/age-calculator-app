@@ -38,9 +38,9 @@ function calculateAge() {
 	monthsOutput.textContent = months;
 	daysOutput.textContent = days;
 
-	console.log(birthDate);
-	console.log(days, months, years);
-	console.log(typeof dayInput.value); // Returns string when empty. Use to set condition.
+	console.log(birthDate); // Test log
+	console.log(days, months, years); // Test log
+	console.log(typeof dayInput.value); // Test log
 }
 
 // Function to validate day input and update alert:

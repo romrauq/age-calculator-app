@@ -1,13 +1,16 @@
 // Get references to input fields and output spans:
+const dayLabel = document.getElementById("day-label");
+const monthLabel = document.getElementById("month-label");
+const yearLabel = document.getElementById("year-label");
 const dayInput = document.getElementById("day-input");
 const monthInput = document.getElementById("month-input");
 const yearInput = document.getElementById("year-input");
-const yearsOutput = document.getElementById("years-output");
-const monthsOutput = document.getElementById("months-output");
-const daysOutput = document.getElementById("days-output");
 const dayAlert = document.getElementById("day-alert");
 const monthAlert = document.getElementById("month-alert");
 const yearAlert = document.getElementById("year-alert");
+const yearsOutput = document.getElementById("years-output");
+const monthsOutput = document.getElementById("months-output");
+const daysOutput = document.getElementById("days-output");
 const button = document.getElementById("action-btn");
 
 // Event listeners for input fields:
@@ -22,6 +25,19 @@ function calculateAge() {
 		yearsOutput.textContent = "--";
 		monthsOutput.textContent = "--";
 		daysOutput.textContent = "--";
+
+		dayAlert.textContent = "This field is required.";
+		dayAlert.style.visibility = "visible";
+		dayLabel.style.color = "hsl(0, 100%, 67%)";
+
+		monthAlert.textContent = "This field is required.";
+		monthAlert.style.visibility = "visible";
+		monthLabel.style.color = "hsl(0, 100%, 67%)";
+
+		yearAlert.textContent = "This field is required.";
+		yearAlert.style.visibility = "visible";
+		yearLabel.style.color = "hsl(0, 100%, 67%)";
+
 		return;
 	}
 
@@ -54,11 +70,14 @@ function validateDay() {
 	if (day <= 0 || day > 31) {
 		dayAlert.textContent = "Must be a valid day";
 		dayAlert.style.visibility = "visible";
+		dayLabel.style.color = "hsl(0, 100%, 67%)";
 	} else if (isNaN(day)) {
 		dayAlert.textContent = "Please provide day value.";
 		dayAlert.style.visibility = "visible";
+		dayLabel.style.color = "hsl(0, 100%, 67%)";
 	} else {
 		dayAlert.style.visibility = "hidden";
+		dayLabel.style.color = "hsl(0, 1%, 44%)";
 	}
 }
 
@@ -69,11 +88,14 @@ function validateMonth() {
 	if (month <= 0 || month > 12) {
 		monthAlert.textContent = "Must be a valid month";
 		monthAlert.style.visibility = "visible";
+		monthLabel.style.color = "hsl(0, 100%, 67%)";
 	} else if (isNaN(month)) {
 		monthAlert.textContent = "Please provide month value.";
 		monthAlert.style.visibility = "visible";
+		monthLabel.style.color = "hsl(0, 100%, 67%)";
 	} else {
 		monthAlert.style.visibility = "hidden";
+		monthLabel.style.color = "hsl(0, 1%, 44%)";
 	}
 }
 
@@ -85,13 +107,17 @@ function validateYear() {
 	if (year > today.getFullYear()) {
 		yearAlert.textContent = "Must be in the past";
 		yearAlert.style.visibility = "visible";
+		yearLabel.style.color = "hsl(0, 100%, 67%)";
 	} else if (isNaN(year)) {
 		yearAlert.textContent = "Must be a valid year.";
 		yearAlert.style.visibility = "visible";
+		yearLabel.style.color = "hsl(0, 100%, 67%)";
 	} else if (year <= 0) {
 		yearAlert.textContent = "Must be greater than 0";
 		yearAlert.style.visibility = "visible";
+		yearLabel.style.color = "hsl(0, 100%, 67%)";
 	} else {
 		yearAlert.style.visibility = "hidden";
+		yearLabel.style.color = "hsl(0, 1%, 44%)";
 	}
 }

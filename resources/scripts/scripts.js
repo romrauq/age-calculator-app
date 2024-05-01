@@ -17,6 +17,14 @@ yearInput.addEventListener("input", validateYear);
 
 // Function to calculate age:
 function calculateAge() {
+	// Check if any input field is empty
+	if (!dayInput.value || !monthInput.value || !yearInput.value) {
+		yearsOutput.textContent = "--";
+		monthsOutput.textContent = "--";
+		daysOutput.textContent = "--";
+		return;
+	}
+
 	const today = new Date();
 	const birthDate = new Date(yearInput.value, monthInput.value - 1, dayInput.value);
 	let years = today.getFullYear() - birthDate.getFullYear();
